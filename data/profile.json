@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Waitting",
+        "value":[0,100,200,100],
+        "itemStyle":{
+            "normal" :{
+                "color":"#bd6d6c"
+            }
+        }
+    },
+    {
+        "name": "Running",
+        "value":[0,200,350,150],
+        "itemStyle":{
+            "normal" :{
+                "color":"#72b362"
+            }
+        }
+    },
+    {
+        "name": "Waitting",
+        "value":[0,400,450,50],
+        "itemStyle":{
+            "normal" :{
+                "color":"#bd6d6c"
+            }
+        }
+    },
+    {
+        "name": "Running",
+        "value":[0,450,600,150],
+        "itemStyle":{
+            "normal" :{
+                "color":"#72b362"
+            }
+        }
+    },
+    {
+        "name": "Waitting",
+        "value":[1,90,150,60],
+        "itemStyle":{
+            "normal" :{
+                "color":"#bd6d6c"
+            }
+        }
+    },
+    {
+        "name": "Running",
+        "value":[1,150,350,200],
+        "itemStyle":{
+            "normal" :{
+                "color":"#72b362"
+            }
+        }
+    }
+]

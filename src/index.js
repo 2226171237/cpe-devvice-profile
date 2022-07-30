@@ -1,4 +1,6 @@
 import * as echarts from 'echarts';
+import data from '../data/profile.json';
+import categories from "../data/devices.json";
 
 var dom = document.getElementById('main');
 var myChart = echarts.init(dom, null, {
@@ -9,32 +11,42 @@ var app = {};
 
 var option;
 
-var data = [];
-var dataCount = 20;
-var startTime = +new Date();
-var categories = [...Array(20000).keys()]
-var types = [
-    { name: 'Waitting', color: '#bd6d6c' },
-    { name: 'Running', color: '#72b362' }
-];
-// Generate mock data
-categories.forEach(function (category, index) {
-    var baseTime = startTime;
-    for (var i = 0; i < dataCount; i++) {
-        var typeItem = types[Math.round(Math.random() * (types.length - 1))];
-        var duration = Math.round(Math.random() * 10000);
-        data.push({
-            name: typeItem.name,
-            value: [index, baseTime, (baseTime += duration), duration],
-            itemStyle: {
-                normal: {
-                    color: typeItem.color
-                }
-            }
-        });
-        baseTime += Math.round(Math.random() * 2000);
-    }
-});
+// var data = [];
+// var dataCount = 20;
+// var startTime = +new Date();
+// var categories = [...Array(20000).keys()]
+// var types = [
+//     { name: 'Waitting', color: '#bd6d6c' },
+//     { name: 'Running', color: '#72b362' }
+// ];
+// // Generate mock data
+// categories.forEach(function (category, index) {
+//     var baseTime = startTime;
+//     for (var i = 0; i < dataCount; i++) {
+//         var typeItem = types[Math.round(Math.random() * (types.length - 1))];
+//         var duration = Math.round(Math.random() * 10000);
+//         data.push({
+//             name: typeItem.name,
+//             value: [index, baseTime, (baseTime += duration), duration],
+//             itemStyle: {
+//                 normal: {
+//                     color: typeItem.color
+//                 }
+//             }
+//         });
+//         baseTime += Math.round(Math.random() * 2000);
+//     }
+// });
+// var request = new XMLHttpRequest();
+// request.open("get","../data/profile.json");
+// request.send(null);
+// request.onload = function () {
+//     if(request.status==200){
+//         data=JSON.parse(request.responseText);
+//     }
+// };
+var startTime = 0;
+
 function renderItem(params, api) {
     var categoryIndex = api.value(0);
     var start = api.coord([api.value(1), categoryIndex]);
